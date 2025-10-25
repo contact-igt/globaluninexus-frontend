@@ -1,0 +1,178 @@
+.whyUsSection {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.featureCard:hover,
+.featureCard.active {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+  border-color: #4caf50;
+}
+
+.featureCard:hover::before,
+.featureCard.active::before {
+  transform: scaleX(1);
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .iconWrapper,
+.featureCard.active .iconWrapper {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 0.8rem;
+}
+
+.featureDescription {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.featureDetails {
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.featureCard:hover .featureDetails,
+.featureCard.active .featureDetails {
+  opacity: 1;
+}
+
+.cardGlow {
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.featureCard:hover .cardGlow,
+.featureCard.active .cardGlow {
+  opacity: 1;
+}
+
+.statsContainer {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(76, 175, 80, 0.3);
+}
+
+.statBox {
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.statBox:hover {
+  transform: scale(1.1);
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .featureCard {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .statsContainer {
+    padding: 2rem 1rem;
+  }
+}
