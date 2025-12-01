@@ -1,17 +1,24 @@
 import './globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 
-const poppins = Poppins({
+const inter = Inter({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
 });
 
 export const metadata: Metadata = {
-  title: 'Global Agri Export - Connecting India\'s Finest Agricultural Produce with the World',
-  description: 'Fresh, authentic, and globally certified agricultural products delivered directly from our trusted farmers to your business.',
+  title: 'UniNexus Traders - Connecting India\'s Finest Agricultural Produce with the World',
+  description: 'UniNexus Traders Pvt. Ltd. delivers fresh, authentic, and globally certified agricultural products directly from trusted farmers to your business.',
 };
 
 export default function RootLayout({
@@ -20,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }

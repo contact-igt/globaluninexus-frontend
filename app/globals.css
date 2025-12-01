@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --primary-green: #2e7d32;
-  --secondary-green: #4caf50;
-  --light-green: #8bc34a;
-  --dark-green: #1b5e20;
-  --accent-yellow: #ffc107;
-  --accent-orange: #ff9800;
-  --text-dark: #333;
-  --text-light: #666;
-  --background-light: #f8f9fa;
+  /* UniNexus Brand Colors */
+  --deep-navy: #132644;
+  --global-teal: #267C92;
+  --network-cyan: #5EBBC8;
+  --prestige-gold: #C2A470;
+  --bg-light: #F8F9FA;
+
+  /* Font families */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-outfit), Georgia, serif;
 }
 
 * {
@@ -28,8 +29,8 @@ body {
   margin: 0;
   padding: 0;
   background: #ffffff;
-  color: var(--text-dark);
-  font-family: 'Poppins', sans-serif;
+  color: var(--deep-navy);
+  font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -47,13 +48,38 @@ img {
 
 button {
   font-family: inherit;
+  cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
   font-weight: 700;
+  font-family: var(--font-serif);
 }
 
 p {
   line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--global-teal);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--deep-navy);
 }
