@@ -10,15 +10,14 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts }) => {
     return (
-        <footer className="bg-[#132644] text-[#F8F9FA]/70 pt-20 pb-10 border-t border-[#267C92]/30">
+        <footer className="bg-[#132644] text-[#F8F9FA]/70 pt-20 pb-10 border-t border-[#267C92]/30 relative z-20">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     <div>
                         <div className="flex items-center gap-2 mb-6">
-                            <Globe className="text-[#C2A470] w-6 h-6" />
-                            <span className="text-2xl font-bold text-white font-serif">
-                                Uni<span className="text-[#C2A470]">Nexus</span>
-                            </span>
+                            <div className="bg-white p-2 md:p-3 rounded-xl inline-block">
+                                <img src="/assets/logo.png" alt="UniNexus Logo" className="w-32 md:w-40 h-auto object-contain" />
+                            </div>
                         </div>
                         <p className="mb-6 text-[#F8F9FA]/60">
                             Connecting India&apos;s finest agricultural produce with the world. Quality, trust, and excellence in every shipment.
@@ -63,11 +62,11 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts 
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
-                                <span>contact@uninexus.com</span>
+                                <a href="mailto:contact@globaluninexus.com" className="hover:text-[#C2A470] transition-colors">contact@globaluninexus.com</a>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Phone className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
-                                <span>+91 98765 43210</span>
+                                <a href="tel:+919876543210" className="hover:text-[#C2A470] transition-colors">+91 98765 43210</a>
                             </li>
                         </ul>
                     </div>
