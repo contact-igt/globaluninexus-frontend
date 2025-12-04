@@ -46,15 +46,6 @@ const DetailedProductView: React.FC<DetailedProductViewProps> = ({ onBack }) => 
         { v: "Indo-5", c: "High color & pungency, long pods", u: "Export + masala brands" }
     ];
 
-    const riceVarieties = [
-        "Organic White Rice",
-        "Brown Rice",
-        "Red Rice",
-        "Black Rice",
-        "Basmati Rice",
-        "Non-Basmati Rice"
-    ];
-
     return (
         <div className="bg-[#F8F9FA] min-h-screen pb-20 pt-20">
             {/* Header / Nav for subpage */}
@@ -66,7 +57,7 @@ const DetailedProductView: React.FC<DetailedProductViewProps> = ({ onBack }) => 
                     >
                         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform text-[#C2A470]" /> Back to Home
                     </button>
-                    <span className="font-bold text-[#132644] text-lg hidden sm:block font-serif">UniNexus Traders Catalog</span>
+                    <span className="font-bold text-[#132644] text-lg hidden sm:block font-serif">UniNexus Traders Catalogue</span>
                 </div>
             </div>
 
@@ -74,7 +65,7 @@ const DetailedProductView: React.FC<DetailedProductViewProps> = ({ onBack }) => 
                 {/* Main Section Heading */}
                 <div className="text-center max-w-4xl mx-auto mb-16">
                     <span className="bg-white text-[#132644] border border-[#C2A470] px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block shadow-sm">
-                        Premium Export Catalog
+                        Premium Export Catalogue
                     </span>
                     <h1 className="text-4xl md:text-5xl font-bold text-[#132644] mb-6 font-serif">Our Premium Agricultural Products</h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -82,276 +73,376 @@ const DetailedProductView: React.FC<DetailedProductViewProps> = ({ onBack }) => 
                     </p>
                 </div>
 
-                {/* Coconut Section */}
-                <section className="mb-20 scroll-mt-24" id="coconut">
-                    <div className="flex flex-col lg:flex-row gap-12 items-start">
-                        <div className="lg:w-1/3">
-                            <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[3/4] border-4 border-white ring-1 ring-[#C2A470]/30 group">
-                                <img
-                                    src="/assets/coconut.webp"
-                                    alt="Pollachi Coconut"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#132644]/90 via-[#132644]/40 to-transparent flex items-end p-8">
-                                    <h2 className="text-white text-3xl font-bold font-serif border-l-4 border-[#C2A470] pl-4">Coconut & Tender Coconut</h2>
+                {/* Products List - Alternating Layout */}
+                <div className="flex flex-col gap-16 mb-20">
+
+                    {/* Coconut & Tender Coconut */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/coconut.webp"
+                                alt="Pollachi Coconut"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#132644]/80 to-transparent lg:hidden"></div>
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <span className="bg-[#C2A470] text-[#132644] text-xs font-bold px-3 py-1 rounded-full">Best Seller</span>
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Pollachi, Tamil Nadu
                                 </div>
                             </div>
-                            <div className="mt-6 bg-white p-6 rounded-xl border border-[#C2A470] shadow-sm">
-                                <h3 className="flex items-center gap-2 font-bold text-[#132644] mb-2">
-                                    <MapPin className="w-5 h-5 text-[#C2A470]" /> Origin: Pollachi, Tamil Nadu
-                                </h3>
-                                <p className="text-slate-700">
-                                    Pollachi is globally known for supplying premium-grade coconuts and tender coconuts with exceptional water content and natural sweetness.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="lg:w-2/3 w-full">
-                            <h3 className="text-2xl font-bold text-[#132644] mb-6 flex items-center gap-3">
-                                <Droplet className="text-[#5EBBC8]" /> Available Varieties
-                            </h3>
-                            <div className="overflow-x-auto bg-white rounded-xl shadow-lg border-t-4 border-[#C2A470]">
-                                <table className="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr className="bg-[#132644] text-white">
-                                            <th className="p-4 font-bold font-serif tracking-wide text-[#C2A470]">Variety</th>
-                                            <th className="p-4 font-bold font-serif tracking-wide text-[#C2A470]">Characteristics</th>
-                                            <th className="p-4 font-bold font-serif tracking-wide text-[#C2A470]">Usage / Notes</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {coconutVarieties.map((row, idx) => (
-                                            <tr key={idx} className="hover:bg-[#F8F9FA] transition-colors">
-                                                <td className="p-4 font-medium text-[#132644]">{row.v}</td>
-                                                <td className="p-4 text-slate-600">{row.c}</td>
-                                                <td className="p-4 text-slate-500 italic">{row.u}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Coconut & Tender Coconut</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Pollachi is globally known for supplying premium-grade coconuts and tender coconuts with exceptional water content and natural sweetness.
+                            </p>
+                            <div className="space-y-2">
+                                {coconutVarieties.slice(0, 4).map((variety, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 text-sm">
+                                        <Droplet className="w-4 h-4 text-[#5EBBC8] mt-0.5 flex-shrink-0" />
+                                        <span className="text-white"><strong className="text-[#C2A470]">{variety.v}:</strong> {variety.c}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                </section>
 
-                {/* Ooty Garlic */}
-                <section className="mb-20 bg-gradient-to-br from-[#132644] to-[#267C92] rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-[#5EBBC8]/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-
-                    <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
-                        <div className="md:w-1/2 order-2 md:order-1">
-                            <h2 className="text-3xl font-bold mb-4 flex items-center gap-3 font-serif text-white">
-                                <span className="text-4xl">🧄</span> Ooty Garlic
-                            </h2>
-                            <p className="text-lg text-[#F8F9FA] mb-6 leading-relaxed">
-                                Sourced from the cool climatic region of Ooty, this garlic variety is widely preferred for its strong medicinal value and rich flavor.
-                            </p>
-                            <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-[#C2A470]/50 hover:border-[#C2A470] transition-colors">
-                                <h4 className="font-bold text-[#C2A470] mb-4 tracking-wide uppercase text-sm">Key Features</h4>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    {[
-                                        "Highly medicinal and therapeutic",
-                                        "Small, tightly packed bulbs",
-                                        "Strong and pungent aroma",
-                                        "Excellent shelf life",
-                                        "Ideal for cooking and Ayurveda"
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="flex items-center gap-2 text-white">
-                                            <CheckCircle className="w-4 h-4 text-[#5EBBC8] flex-shrink-0" /> {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="md:w-1/2 order-1 md:order-2">
+                    {/* Ooty Garlic */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row-reverse lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
                             <img
                                 src="/assets/garlic.png"
                                 alt="Ooty Garlic"
-                                className="rounded-2xl shadow-2xl w-full h-80 object-cover border-4 border-[#C2A470]/30"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
-                    </div>
-                </section>
-
-                {/* Turmeric */}
-                <section className="mb-20">
-                    <div className="flex flex-col lg:flex-row gap-12">
-                        <div className="lg:w-1/3">
-                            <div className="sticky top-24">
-                                <h2 className="text-3xl font-bold text-[#132644] mb-4 flex items-center gap-3 font-serif">
-                                    <span className="text-[#C2A470]">🌿</span> Turmeric
-                                </h2>
-                                <div className="bg-white p-6 rounded-xl border border-[#C2A470] mb-6 shadow-sm">
-                                    <p className="font-bold text-[#132644] mb-2">Origin: Erode, Tamil Nadu</p>
-                                    <p className="text-slate-600">
-                                        Erode is one of India&apos;s major turmeric hubs, known for bright color, purity, and high curcumin content.
-                                    </p>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Ooty, Tamil Nadu
                                 </div>
-                                <img
-                                    src="/assets/erode-turmeric-powder.jpeg"
-                                    alt="Turmeric Powder"
-                                    className="rounded-2xl w-full h-64 object-cover shadow-lg"
-                                />
                             </div>
-                        </div>
-                        <div className="lg:w-2/3">
-                            <h3 className="text-xl font-bold text-[#132644] mb-4">Erode Turmeric Varieties</h3>
-                            <div className="overflow-hidden bg-white rounded-xl shadow-lg border-t-4 border-[#C2A470]">
-                                <table className="w-full text-left">
-                                    <thead className="bg-[#132644] text-white">
-                                        <tr>
-                                            <th className="p-4 font-bold font-serif text-[#C2A470]">Variety</th>
-                                            <th className="p-4 font-bold font-serif text-[#C2A470]">Characteristics</th>
-                                            <th className="p-4 font-bold font-serif text-[#C2A470]">Usage</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {turmericVarieties.map((row, idx) => (
-                                            <tr key={idx} className="hover:bg-[#F8F9FA]">
-                                                <td className="p-4 font-medium text-[#132644]">{row.v}</td>
-                                                <td className="p-4 text-slate-600">{row.c}</td>
-                                                <td className="p-4 text-slate-600">{row.u}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Guntur Red Chillies */}
-                <section className="mb-20">
-                    <div className="bg-white rounded-3xl p-8 md:p-12 border border-[#C2A470] shadow-xl relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#132644] to-[#267C92]"></div>
-
-                        <div className="text-center max-w-3xl mx-auto mb-10">
-                            <h2 className="text-3xl font-bold text-[#132644] mb-4 font-serif">🌶️ Guntur Red Chillies</h2>
-                            <p className="text-lg text-slate-600">
-                                Origin: Andhra Pradesh. World-famous for high-quality red chillies used in spices, pickles, and industrial production.
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Ooty Garlic</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Sourced from the cool climatic region of Ooty, this garlic variety is widely preferred for its strong medicinal value and rich flavor.
                             </p>
-                        </div>
-
-                        <div className="grid lg:grid-cols-2 gap-8">
-                            {chillies.map((item, idx) => (
-                                <div key={idx} className="bg-[#F8F9FA] p-6 rounded-xl shadow-sm border border-slate-200 flex gap-4 items-start hover:border-[#C2A470] transition-colors">
-                                    <div className="bg-white p-2 rounded-lg shadow-sm">
-                                        <Flame className="w-6 h-6 text-[#C2A470]" />
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {[
+                                    "Highly medicinal",
+                                    "Small, tightly packed bulbs",
+                                    "Strong pungent aroma",
+                                    "Long shelf life"
+                                ].map((item, idx) => (
+                                    <div key={idx} className="flex items-center gap-2 text-sm bg-[#132644]/30 p-3 rounded-lg border border-[#C2A470]/20">
+                                        <CheckCircle className="w-4 h-4 text-[#C2A470] flex-shrink-0" />
+                                        <span className="text-white">{item}</span>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-lg text-[#132644]">{item.v}</h4>
-                                        <p className="text-slate-600 text-sm mb-2">{item.c}</p>
-                                        <span className="inline-block bg-white text-[#267C92] text-xs px-2 py-1 rounded font-medium border border-[#267C92]/20">
-                                            Best for: {item.u}
-                                        </span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Rice Section */}
-                <section className="mb-20">
-                    <h2 className="text-3xl font-bold text-[#132644] mb-8 flex items-center gap-3 font-serif">
-                        <span className="text-4xl">🍚</span> Rice Varieties
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-[#132644] p-8 rounded-2xl border border-[#C2A470]/50 shadow-2xl relative overflow-hidden text-white">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C2A470] rounded-bl-full -mr-10 -mt-10 z-0 opacity-20"></div>
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-bold text-[#C2A470] mb-4 font-serif">Seevaga Samba Rice</h3>
-                                <p className="text-[#F8F9FA] mb-6">Premium small-grain rice from Tamil Nadu delta regions.</p>
-                                <ul className="space-y-3">
-                                    {[
-                                        "Naturally aromatic",
-                                        "Strong aroma & firm texture",
-                                        "Non-sticky; grains remain separate",
-                                        "Excellent for traditional dishes & biryani",
-                                        "Great flavor absorption"
-                                    ].map((feat, i) => (
-                                        <li key={i} className="flex items-center gap-2 text-[#F8F9FA]">
-                                            <Leaf className="w-4 h-4 text-[#5EBBC8]" /> {feat}
-                                        </li>
-                                    ))}
-                                </ul>
+                                ))}
                             </div>
                         </div>
+                    </div>
 
-                        <div className="bg-white p-8 rounded-2xl border border-[#C2A470] flex flex-col justify-center">
-                            <h3 className="text-xl font-bold text-[#132644] mb-6 font-serif">Other Premium Varieties</h3>
+                    {/* Turmeric */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/erode-turmeric-powder.jpeg"
+                                alt="Erode Turmeric"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Erode, Tamil Nadu
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Turmeric</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Erode is one of India&apos;s major turmeric hubs, known for bright color, purity, and high curcumin content.
+                            </p>
+                            <div className="space-y-2">
+                                {turmericVarieties.map((variety, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 text-sm">
+                                        <Leaf className="w-4 h-4 text-[#C2A470] mt-0.5 flex-shrink-0" />
+                                        <span className="text-white"><strong className="text-[#C2A470]">{variety.v}:</strong> {variety.c}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Karnataka Black Pepper */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row-reverse lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/karnataka-black-pepper.png"
+                                alt="Karnataka Black Pepper"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Western Ghats, Karnataka
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Karnataka Black Pepper</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Known as the &quot;King of Spices,&quot; renowned for its bold flavor, high piperine content, and rich dark color.
+                            </p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                {[
+                                    "High Piperine Content",
+                                    "Uniform Bold Size",
+                                    "Rich, Complex Aroma",
+                                    "Premium Export Quality"
+                                ].map((item, idx) => (
+                                    <div key={idx} className="flex items-center gap-2 text-sm bg-[#132644]/30 p-3 rounded-lg border border-[#C2A470]/20">
+                                        <CheckCircle className="w-4 h-4 text-[#C2A470] flex-shrink-0" />
+                                        <span className="text-white">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Theni Cardamom */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/theni-cardamom.png"
+                                alt="Theni Cardamom"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Theni, Tamil Nadu
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Theni Cardamom</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Sourced from the &quot;Cardamom Hills,&quot; celebrated as the &quot;Queen of Spices&quot; for its intense aroma and vibrant green color.
+                            </p>
+                            <div className="grid grid-cols-2 gap-3">
+                                {[
+                                    { t: "Intense Aroma", d: "High volatile oil" },
+                                    { t: "Vibrant Green", d: "Natural color" },
+                                    { t: "Bold Pods", d: "7mm - 8mm+" },
+                                    { t: "Hand-Picked", d: "Premium quality" }
+                                ].map((fact, idx) => (
+                                    <div key={idx} className="bg-[#132644]/30 p-3 rounded-lg border border-[#C2A470]/30">
+                                        <h5 className="font-bold text-white text-xs mb-1">{fact.t}</h5>
+                                        <p className="text-xs text-white/90">{fact.d}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Guntur Red Chillies */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row-reverse lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/guntur-red-chilli.webp"
+                                alt="Guntur Red Chillies"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Andhra Pradesh
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Guntur Red Chillies</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                World-famous for high-quality red chillies used in spices, pickles, and industrial production.
+                            </p>
+                            <div className="space-y-2">
+                                {chillies.slice(0, 4).map((variety, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 text-sm">
+                                        <Flame className="w-4 h-4 text-[#C2A470] mt-0.5 flex-shrink-0" />
+                                        <span className="text-white"><strong className="text-[#C2A470]">{variety.v}:</strong> {variety.c}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Kavuni Rice */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/kavuni-rice.png"
+                                alt="Kavuni Rice"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Kangayam, Tamil Nadu
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Kavuni Rice</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Kangayam&apos;s traditional farming methods produce high-quality, nutrient-rich Kavuni rice loved in local and export markets.
+                            </p>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="bg-[#132644]/30 p-4 rounded-xl border-l-4 border-[#C2A470]">
+                                    <h5 className="font-bold text-white text-sm mb-1">Red Kavuni</h5>
+                                    <p className="text-xs text-white/90">Rich in iron & fiber</p>
+                                </div>
+                                <div className="bg-[#132644]/30 p-4 rounded-xl border-l-4 border-[#8B4513]">
+                                    <h5 className="font-bold text-white text-sm mb-1">Brown Kavuni</h5>
+                                    <p className="text-xs text-white/90">High protein</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Seeraga Samba Rice */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row-reverse lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/seevaga-samba-rice.png"
+                                alt="Seeraga Samba Rice"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Delta, Thanjavur
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Seeraga Samba Rice</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Premium small-grain rice from Tamil Nadu delta regions.
+                            </p>
+                            <div className="space-y-2">
+                                {[
+                                    "Naturally aromatic",
+                                    "Strong aroma & firm texture",
+                                    "Excellent for biryani",
+                                    "Traditional variety"
+                                ].map((feat, i) => (
+                                    <div key={i} className="flex items-center gap-3 text-sm">
+                                        <Leaf className="w-4 h-4 text-[#C2A470]" />
+                                        <span className="text-white">{feat}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Millets */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/millets.png"
+                                alt="Millets Varieties"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Tamil Nadu & Karnataka
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Millets</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Ancient superfoods packed with nutrition. Our millets are naturally grown, gluten-free, and rich in fiber, minerals, and antioxidants.
+                            </p>
+                            <div className="space-y-2">
+                                {[
+                                    { v: "Foxtail Millet", d: "High in protein & calcium" },
+                                    { v: "Pearl Millet", d: "Rich in iron & magnesium" },
+                                    { v: "Finger Millet (Ragi)", d: "Excellent calcium source" },
+                                    { v: "Little Millet", d: "Low glycemic index" }
+                                ].map((millet, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 text-sm">
+                                        <Leaf className="w-4 h-4 text-[#C2A470] mt-0.5 flex-shrink-0" />
+                                        <span className="text-white"><strong className="text-[#C2A470]">{millet.v}:</strong> {millet.d}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Puliyankudi Lime */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row-reverse lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/puliyankudi-lime.png"
+                                alt="Puliyankudi Lime"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Tamil Nadu
+                                </div>
+                            </div>
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Puliyankudi Lime</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Thin rind, extremely high juice content, strong citrus aroma. Perfect for beverages & pickles.
+                            </p>
                             <div className="flex flex-wrap gap-3">
-                                {riceVarieties.map((rice, i) => (
-                                    <span key={i} className="bg-[#F8F9FA] border border-[#267C92]/30 px-4 py-2 rounded-lg text-[#132644] font-medium shadow-sm hover:border-[#C2A470] hover:text-[#C2A470] cursor-default transition-colors">
-                                        {rice}
+                                {["Weight Management", "Blood Sugar Control", "Heart Health"].map((h, i) => (
+                                    <span key={i} className="bg-[#132644]/30 text-white text-xs font-bold px-4 py-2 rounded-full border border-[#C2A470]/50">
+                                        {h}
                                     </span>
                                 ))}
                             </div>
-                            <p className="mt-6 text-sm text-[#267C92] italic">
-                                * All varieties are nutrient-dense, fiber-rich, and suitable for both retail and export.
-                            </p>
                         </div>
                     </div>
-                </section>
 
-                {/* Lime & Guava */}
-                <section className="mb-20 grid md:grid-cols-2 gap-12">
-                    {/* Lime */}
-                    <div className="bg-white p-8 rounded-3xl border border-[#C2A470]/50 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="text-4xl">🍋</div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-[#132644] font-serif">Puliyankudi Lime</h3>
-                                <p className="text-[#267C92] font-medium">Tamil Nadu</p>
-                            </div>
+                    {/* Palani Aayakudi Guava */}
+                    <div className="group bg-[#237087] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#267C92] hover:border-[#C2A470] flex flex-col lg:flex-row lg:h-[28rem]">
+                        <div className="lg:w-1/2 h-64 lg:h-full overflow-hidden relative">
+                            <img
+                                src="/assets/guava.webp"
+                                alt="Palani Aayakudi Guava"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
                         </div>
-                        <div className="space-y-6">
-                            <div>
-                                <h4 className="font-bold text-[#132644] mb-2">Features</h4>
-                                <p className="text-slate-600">Thin rind, extremely high juice content, strong citrus aroma. Perfect for beverages & pickles.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-[#132644] mb-2">Health Benefits</h4>
-                                <div className="flex flex-wrap gap-2">
-                                    {["Weight Management", "Blood Sugar Regulation", "Heart Health"].map((h, i) => (
-                                        <span key={i} className="bg-[#F8F9FA] text-[#132644] text-xs font-bold px-3 py-1 rounded-full border border-[#C2A470]">
-                                            {h}
-                                        </span>
-                                    ))}
+                        <div className="lg:w-1/2 p-6 lg:p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="flex items-center gap-1 text-[#C2A470] text-sm font-bold">
+                                    <MapPin className="w-4 h-4" /> Palani, Tamil Nadu
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Guava */}
-                    <div className="bg-white p-8 rounded-3xl border border-[#C2A470]/50 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="text-4xl">🍐</div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-[#132644] font-serif">Palani Aayakudi Guava</h3>
-                                <p className="text-[#267C92] font-medium">Famous Indian Variety</p>
-                            </div>
-                        </div>
-                        <div className="space-y-4">
-                            <p className="text-slate-700">Known for rich sweetness and soft edible seeds.</p>
-                            <ul className="space-y-2">
+                            <h2 className="text-2xl lg:text-3xl font-bold text-white font-serif mb-3">Palani Guava</h2>
+                            <p className="text-white text-sm lg:text-base mb-5 leading-relaxed line-clamp-3">
+                                Known for rich sweetness and soft edible seeds. Famous Indian variety.
+                            </p>
+                            <div className="space-y-2">
                                 {[
                                     "Naturally sweet",
                                     "High pulp content",
-                                    "Soft edible seeds",
                                     "Ideal for juices & fresh consumption"
                                 ].map((feat, i) => (
-                                    <li key={i} className="flex items-center gap-2 text-slate-700">
-                                        <CheckCircle className="w-4 h-4 text-[#C2A470]" /> {feat}
-                                    </li>
+                                    <div key={i} className="flex items-center gap-3 text-sm">
+                                        <CheckCircle className="w-4 h-4 text-[#C2A470]" />
+                                        <span className="text-white">{feat}</span>
+                                    </div>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     </div>
-                </section>
+
+                </div>
 
                 {/* Bottom CTA */}
                 <div className="text-center pb-12">
-                    <h3 className="text-2xl font-bold mb-6 text-[#132644] font-serif">Interested in our Catalog?</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-[#132644] font-serif">Interested in our Catalogue?</h3>
                     <button
                         onClick={onBack}
                         className="bg-[#C2A470] hover:bg-[#b0935f] text-[#132644] px-8 py-4 rounded-full font-bold text-lg shadow-lg transition-all transform hover:-translate-y-1"

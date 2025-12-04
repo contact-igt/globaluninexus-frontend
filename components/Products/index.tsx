@@ -46,7 +46,7 @@ const Products: React.FC<ProductsProps> = ({ handleExploreProducts }) => {
                         onClick={handleExploreProducts}
                         className="text-[#132644] font-bold hover:text-[#267C92] flex items-center gap-2 group whitespace-nowrap bg-white border border-[#C2A470] px-6 py-3 rounded-full hover:bg-[#F8F9FA] transition-colors shadow-sm"
                     >
-                        View Full Catalog <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                        View Full Catalogue <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
 

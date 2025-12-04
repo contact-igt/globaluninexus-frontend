@@ -124,7 +124,7 @@ const CTA: React.FC = () => {
                                     <option value={"Coconut & Tender Coconut"}>Coconut & Tender Coconut</option>
                                     <option value={"Turmeric"}>Turmeric</option>
                                     <option value={"Guntur Chillies"}>Guntur Chillies</option>
-                                    <option value={"Seevaga Samba Rice"}>Seevaga Samba Rice</option>
+                                    <option value={"Seeraga Samba Rice"}>Seeraga Samba Rice</option>
                                     <option value={"Puliyankudi Lime"}>Puliyankudi Lime</option>
                                     <option value={"Other"}>Other</option>
                                 </select>

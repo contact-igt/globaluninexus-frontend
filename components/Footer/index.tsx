@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts 
                     <div>
                         <h4 className="text-white font-bold text-lg mb-6 font-serif">Our Products</h4>
                         <ul className="space-y-4">
-                            {['Coconut', 'Turmeric', 'Guntur Chillies', 'Rice & Millets', 'Fresh Fruits'].map((link) => (
+                            {['Coconut', 'Turmeric', 'Spices', 'Guntur Chillies', 'Rice & Millets', 'Fresh Fruits'].map((link) => (
                                 <li key={link}>
                                     <button onClick={handleExploreProducts} className="hover:text-[#5EBBC8] transition-colors text-left">{link}</button>
                                 </li>
@@ -58,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts 
                         <ul className="space-y-4">
                             <li className="flex items-start gap-4">
                                 <MapPin className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
-                                <span>Mumbai, Maharashtra, India</span>
+                                <span>Chennai, Tamil Nadu, India</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts 
                             </li>
                             <li className="flex items-center gap-4">
                                 <Phone className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
-                                <a href="tel:+919876543210" className="hover:text-[#C2A470] transition-colors">+91 98765 43210</a>
+                                <a href="tel:+917904940409" className="hover:text-[#C2A470] transition-colors">+91 79049 40409</a>
                             </li>
                         </ul>
                     </div>
