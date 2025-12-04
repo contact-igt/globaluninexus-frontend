@@ -43,13 +43,13 @@ const OurEdge: React.FC = () => {
                             alt="Farmer checking quality"
                             className="relative rounded-3xl shadow-2xl w-full object-cover !object-[65%_50%] h-[600px] grayscale-[20%] hover:grayscale-0 transition-all duration-500"
                         />
-                        <div className="absolute bottom-8 left-8 bg-white p-6 rounded-xl shadow-lg max-w-xs border border-[#C2A470]">
+                        {/* <div className="absolute bottom-8 left-8 bg-white p-6 rounded-xl shadow-lg max-w-xs border border-[#C2A470]">
                             <div className="flex items-center gap-3 mb-2">
                                 <Award className="text-[#C2A470] w-8 h-8" />
                                 <span className="font-bold text-[#132644]">ISO Certified Processes</span>
                             </div>
                             <p className="text-sm text-slate-600">Ensuring highest quality standards for global export.</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
