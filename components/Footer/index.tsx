@@ -58,7 +58,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection, handleExploreProducts 
                         <ul className="space-y-4">
                             <li className="flex items-start gap-4">
                                 <MapPin className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
-                                <span>Chennai, Tamil Nadu, India</span>
+                                <span>No: 101, NMK STREET, Ayanavaram, Chennai, Tamil Nadu, India - 600023</span>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail className="text-[#C2A470] w-6 h-6 flex-shrink-0" />
